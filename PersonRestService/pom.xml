@@ -1,0 +1,77 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.tutorials.persons</groupId>
+	<artifactId>PersonRestService</artifactId>
+	<name>PersonRestService</name>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<modules>
+		<module>PersonRestService-war</module>
+		<module>PersonRestService-client</module>
+		<module>PersonRestService-jar</module>
+	</modules>
+
+	<properties>
+		<buildWebappDirectory>${basedir}/target/webapp</buildWebappDirectory>
+		<cxf.version>2.5.0</cxf.version>
+		<spring.version>3.0.6.RELEASE</spring.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.tutorials.persons</groupId>
+				<artifactId>PersonRestService-client</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.tutorials.persons</groupId>
+				<artifactId>PersonRestService-jar</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-core</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-beans</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-context</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-web</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-bundle-jaxrs</artifactId>
+				<version>${cxf.version}</version>
+				<exclusions>
+					<exclusion>
+						<groupId>org.eclipse.jetty</groupId>
+						<artifactId>jetty-server</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-transports-http</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.cxf</groupId>
+				<artifactId>cxf-rt-frontend-jaxrs</artifactId>
+				<version>${cxf.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>
