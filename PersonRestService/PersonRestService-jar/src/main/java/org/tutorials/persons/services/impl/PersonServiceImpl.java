@@ -31,7 +31,7 @@ public class PersonServiceImpl implements PersonService {
 		
 		personDao.create(personToCreate);
 		
-		return viewPerson(personToCreate.getDistinguishedName());
+		return viewPerson(personDao.buildDn(personToCreate.getUid(), personToCreate.getClient()).toString());
 	}
 	
 	public List<PersonDTO> searchPerson(String name) {

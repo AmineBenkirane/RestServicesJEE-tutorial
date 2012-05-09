@@ -6,7 +6,7 @@
        http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<bean id="personRestService" class="org.tutorials.rs.persons.impl.PersonRestServiceImpl">
+	<bean id="personRestService" class="org.tutorials.persons.rs.impl.PersonRestServiceImpl">
 		<property name="personService" ref="personService" />
 	</bean>
 	

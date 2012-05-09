@@ -26,6 +26,7 @@ public class CreatePersonRS {
 		super();
 	}
 	
+	@XmlElement(name="personDTO")
 	public PersonDTO getPersonDTO() {
 		return person;
 	}
